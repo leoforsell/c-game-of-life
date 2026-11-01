@@ -1,3 +1,4 @@
 # Källkod
 
-Implementeras stegvis enligt issues #1–#4. Börja med statiskt rutnät; inför dynamiskt minne när reglerna fungerar. Inga färdiga lösningar finns i denna projektstart.
+main.c skriver startmönstret. grid.c nollställer. life.c innehåller TODO för reglerna.
+life.h beskriver det fasta rutnätet; ersätt detta stegvis i issue #3.
