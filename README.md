@@ -1,37 +1,43 @@
 # C Game of Life
 
-Conway’s Game of Life i terminalen med C17, pekare, dubbelbuffring och kontrollerad minneshantering.
+Självständigt arbetsmaterial för repetition inför fortsatta IT-studier.
 
-**Status:** Planering och projektstruktur skapade. Implementation, byggkonfiguration och tester återstår; ingen fungerande applikation eller grön testkörning påstås ännu.
+**Status:** Startkod och uppgiftstester finns. Kärnfunktionerna är TODO-övningar, inte en färdig applikation.
 
 ## Börja här
 
-1. Läs [projektplanen](docs/PROJECT_PLAN.md).
-2. Öppna [första uppgiften](https://github.com/leoforsell/c-game-of-life/issues/1).
-3. Följ [branch- och PR-arbetsflödet](CONTRIBUTING.md).
-4. Anteckna vad du lär dig i [lärandeloggen](docs/LEARNING_LOG.md).
+1. Följ [startguiden med små arbetspass](docs/START_HERE.md).
+2. Läs [projektplanen och uppgifter #1–#6](docs/PROJECT_PLAN.md).
+3. Arbeta med branch och PR enligt [CONTRIBUTING](CONTRIBUTING.md).
+4. Använd [lärandeloggen](docs/LEARNING_LOG.md).
 
-## Grundversion
+## Verktyg och kommandon
 
-Ett litet rektangulärt rutnät med döda celler utanför kanten och ett bestämt antal generationer. Ingen grafik, hårdvara eller egen minnesallokerare i v1.
+Använd C17-kompilator (Clang eller GCC) och Make. På macOS ingår de i Xcode Command Line Tools.
 
-## Verktyg
+```sh
+git clone https://github.com/leoforsell/c-game-of-life.git
+cd c-game-of-life
+make run
+make test
+make exercise-test
+make sanitize
+```
 
-C17, Clang eller GCC och assertionsbaserade tester. Bygg med -Wall -Wextra -Wpedantic. Använd AddressSanitizer och UndefinedBehaviorSanitizer på stödd verktygskedja.
+`make exercise-test` ska misslyckas tills reglerna implementerats.
 
-Exakta versioner och fungerande bygg-, kör- och testkommandon dokumenteras när miljön sätts upp. Kopiera inte framtida kommandon som om projektet redan vore körbart.
+## Vad du arbetar i
 
-## Planerad struktur
+`src/` innehåller fast rutnät, utskrift och TODO-funktioner för reglerna.
+`tests/` innehåller aktivt grundtest och separata övningstester.
 
-- `src/`: C-källkod; börja med ett litet exempel och separera ansvar när det behövs.
-- `tests/`: assertionsbaserade C-tester.
-- `docs/`: projektplan och lärandelogg.
-- `.github/`: mallar för issues och pull requests.
+CI bygger och testar startstrukturen. **Grön CI betyder inte att övningarna är färdiga.**
+Se [teststrategin](tests/README.md) för vad som ska aktiveras senare.
 
 ## Arbetsordning
 
-Maj–juni 2027; buffert och repetition juli–augusti. Ett projekt i taget; tidsfönstret är preliminärt. Se [planens sex uppgifter](docs/PROJECT_PLAN.md#uppgifter-i-ordning).
+Java-kassa → ruttplanerare → C-simulering. Ett huvudprojekt i taget.
+Perioderna i projektplanen är preliminära; anpassa dem med handledare efter vad du kan förklara och göra själv.
 
-## Utbildningssyfte
-
-Ett självständigt lärandeprojekt inför möjliga fortsatta IT-studier. Ingen officiell kurslösning och ingen garanti om framtida kursinnehåll.
+Materialet tränar programmering, algoritmer och minneshantering. Det är inte en officiell KTH-kurslösning.
+CINTE:s exakta upplägg HT2027 och eventuella tillgodoräknanden är inte verifierade här.
